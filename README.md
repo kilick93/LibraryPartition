@@ -12,10 +12,15 @@ MyLibrary.partition(Arrays.asList(1,2,3,4,5), 2);
 ## Comment utiliser cette librairie dans mon projet?
 Récupérer le projet LibraryPartition en téléchargeant l'archive ou en clonant ce repository.
 
-    git clone 
+    git clone https://github.com/kilick93/LibraryPartition.git
 
 Compiler le jar avec la commande 
 
     mvn package
 
-Récupérer le jar créé et l'importer dans votre projet.
+Importer le jar créé dans votre projet pour avoir accès à la fonction "partition".
+
+Pour appeler la fonction : 
+```java
+MyLibrary.partition(Arrays.asList(1,2,3,4,5), 2);
+```
