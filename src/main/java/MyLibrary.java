@@ -5,6 +5,10 @@ import java.util.ListIterator;
 public class MyLibrary {
 
     public static List<List<Integer>> partition (List<Integer> list, int taille) throws Exception{
+        if (list == null) {
+            throw new Exception("Params list is null");
+        }
+
         if (taille < 1) {
             throw new Exception("Params taille should be >= 1");
         }
@@ -15,6 +19,7 @@ public class MyLibrary {
             result.add(list);
             return result;
         }
+
         ListIterator<Integer> iterator = list.listIterator();
 
         while (iterator.hasNext()) {
@@ -28,7 +33,6 @@ public class MyLibrary {
             result.add(subList);
 
         }
-
         return result;
     }
 }

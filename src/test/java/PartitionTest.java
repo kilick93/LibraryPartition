@@ -13,8 +13,8 @@ public class PartitionTest {
      * @throws Exception
      */
     @Test(expected = Exception.class)
-    public void ZeroSizeShouldThrowException() throws Exception {
-        MyLibrary.partition(new ArrayList<Integer>(Arrays.asList(0, 1)), 0);
+    public void zeroSizeShouldThrowException() throws Exception {
+        MyLibrary.partition(new ArrayList<>(Arrays.asList(0, 1)), 0);
     }
 
     /**
@@ -22,8 +22,8 @@ public class PartitionTest {
      * @throws Exception
      */
     @Test(expected = Exception.class)
-    public void NegativeSizeShouldThrowException() throws Exception {
-        MyLibrary.partition(new ArrayList<Integer>(Arrays.asList(0, 1)), -1);
+    public void zegativeSizeShouldThrowException() throws Exception {
+        MyLibrary.partition(new ArrayList<>(Arrays.asList(0, 1)), -1);
     }
 
     /**
@@ -31,7 +31,7 @@ public class PartitionTest {
      * @throws Exception
      */
     @Test
-    public void ExpectedResultWhenTailleLessThanListSize() throws Exception {
+    public void expectedResultWhenTailleLessThanListSize() throws Exception {
         List<List<Integer>> expectedResult= new ArrayList<>();
         expectedResult.add(Arrays.asList(1, 2));
         expectedResult.add(Arrays.asList(3, 4));
@@ -45,7 +45,7 @@ public class PartitionTest {
     }
 
     @Test
-    public void ExpectedResultWhenTailleGreaterOrEqualsToListSize() throws Exception {
+    public void expectedResultWhenTailleGreaterOrEqualsToListSize() throws Exception {
         List<List<Integer>> expectedResult= new ArrayList<>();
         expectedResult.add(Arrays.asList(1, 2, 3, 4, 5));
 
@@ -54,5 +54,10 @@ public class PartitionTest {
             liste.add(i);
         }
         assertEquals(expectedResult, MyLibrary.partition(liste, 10));
+    }
+
+    @Test(expected = Exception.class)
+    public void nullListShouldThrowException() throws Exception {
+        MyLibrary.partition(null, 2);
     }
 }
